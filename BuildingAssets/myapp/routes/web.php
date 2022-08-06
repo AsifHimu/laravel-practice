@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/newroute',function(){
+    return view('test.test');
+});
+Route::get('/existroute',function(){
+    $check = View::exists('test.test3');
+    if($check){
+        return view('test.test1');
+    }
+    else{
+        return 'view not found';
+    }
+});
