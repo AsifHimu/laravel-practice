@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>slkdlskdsldksldkls</h1>
+    <h1>slkdlskdsldksldkls....{{$name}}
+        {{$globalname}}
+    </h1>
 </body>
 </html>

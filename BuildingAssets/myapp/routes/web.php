@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/newroute',function(){
-    return view('test.test');
+    return view('test.test',['name' => 'Asif Bin kabir']); //view with variable
 });
 Route::get('/existroute',function(){
-    $check = View::exists('test.test3');
+    $check = View::exists('test.test'); //view with existing check
     if($check){
         return view('test.test1');
     }
