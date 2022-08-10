@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\check_model;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,29 @@ Route::get('/existroute',function(){
     else{
         return 'view not found';
     }
+});
+Route::get('/checkmodel',function(){
+    //get all row
+    $allvalue = check_model::all();
+
+    //get a single row
+    $singlevalue = check_model::find(12);
+
+    //add row in check_model database with fillable
+    /*$addvalue = check_model::create([
+        'name' => 'asif',
+        'email' => 'asb@@@@@s',
+        'address' => 'adressdddsd',
+    ]);
+
+    */
+    //update fields value
+    /*$findvalue = check_model::find(223);
+    $findvalue->name = 'asifhimu';
+    $findvalue->save();
+    */
+
+    //delete a row
+    $value = check_model::destroy(226);
+    return $value;
 });
