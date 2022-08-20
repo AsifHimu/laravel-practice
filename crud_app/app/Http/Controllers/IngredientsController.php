@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipe;
+use App\Models\Ingradient;
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class IngredientsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::with('ingradients')->get();
-        // dd($recipes);
-        return view('Racipe.index', ['himus' => $recipes]);
+        //
+        //$ingedients = Ingradient::all();
+        $ingredients = Ingradient::with('recipes')->get();
+        return view('ingredients.index', ['ingredients' => $ingredients]);
     }
 
     /**
@@ -27,7 +28,6 @@ class RecipeController extends Controller
     public function create()
     {
         //
-        return view('Racipe.create');
     }
 
     /**
@@ -44,23 +44,22 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Ingradient  $ingradient
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipe $recipe)
+    public function show(Ingradient $ingredient)
     {
         //
-        $ingredients = $recipe->ingradients;
-        return view('Racipe.show',['rcipe' => $recipe,'ingredients' => $ingredients]);
+        return view('ingredients.show',['ingred' => $ingredient]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Ingradient  $ingradient
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recipe $recipe)
+    public function edit(Ingradient $ingradient)
     {
         //
     }
@@ -69,10 +68,10 @@ class RecipeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Ingradient  $ingradient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request, Ingradient $ingradient)
     {
         //
     }
@@ -80,10 +79,10 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\Ingradient  $ingradient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipe $recipe)
+    public function destroy(Ingradient $ingradient)
     {
         //
     }

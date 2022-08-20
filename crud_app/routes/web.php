@@ -22,4 +22,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('Racipe.index', ['recipes' => $numbers]);
 // });
 
-Route::get('/recipes', 'App\Http\Controllers\RecipeController@index');
+Route::get('/recipes', 'App\Http\Controllers\RecipeController@index')->name('recipes.index');
+Route::get('/ingredients','App\Http\Controllers\IngredientsController@index')->name('ingredients.index');
+Route::get('/recipes/{recipe}', 'App\Http\Controllers\RecipeController@show')->name('recipes.show');
+Route::get('/ingredients/{ingredient}', 'App\Http\Controllers\IngredientsController@show')->name('ingredients.show');
+Route::get('/recipes/create', 'App\Http\Controllers\RecipeController@create')->name('recipes.create');
