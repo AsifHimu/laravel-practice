@@ -47,10 +47,10 @@ class IngredientsController extends Controller
      * @param  \App\Models\Ingradient  $ingradient
      * @return \Illuminate\Http\Response
      */
-    public function show(Ingradient $ingredient)
+    public function show(Ingradient $ingradient)
     {
-        //
-        return view('ingredients.show',['ingred' => $ingredient]);
+        //dd($ingradient);
+        return view('ingredients.show',['ingred' => $ingradient]);
     }
 
     /**

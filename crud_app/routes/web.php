@@ -37,4 +37,4 @@ Route::get('/recipes/{recipe}', 'App\Http\Controllers\RecipeController@show')->n
 
 Route::get('/ingredients','App\Http\Controllers\IngredientsController@index')->name('ingredients.index');
 
-Route::get('/ingredients/{ingredient}', 'App\Http\Controllers\IngredientsController@show')->name('ingredients.show');
+Route::get('/ingredients/{ingradient}', 'App\Http\Controllers\IngredientsController@show')->name('ingredients.show');
